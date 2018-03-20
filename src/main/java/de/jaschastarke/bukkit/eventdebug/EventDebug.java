@@ -61,16 +61,18 @@ public class EventDebug extends Core {
         int count = 0;
         for (Class<? extends Event> event : events) {
             if (!Modifier.isAbstract(event.getModifiers())) {
-                getLog().debug("Found Event-Type: " + event.getName());
+                getLogger().info("Found Event-Type: " + event.getName());
+                if (event.getName().equalsIgnoreCase("PlayerChatEvent"))
+                    continue;
                 try {
                     getServer().getPluginManager().registerEvent(event, listener, EventPriority.MONITOR, executer, this);
                     count++;
                 } catch (IllegalPluginAccessException e1) {
-                    getLog().warn("Can't listen to Event: " + event.getName() + ": " + e1.getMessage());
+                    getLogger().warning("Can't listen to Event: " + event.getName() + ": " + e1.getMessage());
                 }
             }
         }
-        getLog().debug("Done registering for "+count+" found Events");
+        getLogger().info("Done registering for "+count+" found Events");
     }
 
 
