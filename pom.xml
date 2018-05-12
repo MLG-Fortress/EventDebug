@@ -36,9 +36,11 @@
   
   <dependencies>
     <dependency>
-      <groupId>com.github.MLG-Fortress</groupId>
+      <groupId>de.jaschastarke</groupId>
       <artifactId>plib</artifactId>
-      <version>81fa4ebf0e</version>
+      <version>${plib.version}</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/plib-1.4-SNAPSHOT.jar</systemPath>
     </dependency>
     <dependency>
     <groupId>javassist</groupId>
