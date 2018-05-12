@@ -7,7 +7,7 @@
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <plib.version>1.4-SNAPSHOT</plib.version>
+    <plib.version>1.5</plib.version>
   </properties>
   
   <repositories>
@@ -29,8 +29,9 @@
       <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
     </repository>
     <repository>
-      <id>jitpack.io</id>
-      <url>https://jitpack.io</url>
+      <id>bintray-robomwm-maven</id>
+      <name>bintray</name>
+      <url>https://dl.bintray.com/robomwm/maven</url>
     </repository>
   </repositories>
   
@@ -39,8 +40,6 @@
       <groupId>de.jaschastarke</groupId>
       <artifactId>plib</artifactId>
       <version>${plib.version}</version>
-      <scope>system</scope>
-      <systemPath>${basedir}/lib/plib-1.4-SNAPSHOT.jar</systemPath>
     </dependency>
     <dependency>
     <groupId>javassist</groupId>
