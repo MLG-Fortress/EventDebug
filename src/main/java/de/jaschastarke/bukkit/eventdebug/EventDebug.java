@@ -62,8 +62,11 @@ public class EventDebug extends Core {
         for (Class<? extends Event> event : events) {
             if (!Modifier.isAbstract(event.getModifiers())) {
                 getLogger().info("Found Event-Type: " + event.getName());
-                if (event.getName().equalsIgnoreCase("PlayerChatEvent"))
+                if (event.getName().equals("org.bukkit.event.player.PlayerChatEvent"))
+                {
+                    getLogger().info("Ignoring this one.");
                     continue;
+                }
                 try {
                     getServer().getPluginManager().registerEvent(event, listener, EventPriority.MONITOR, executer, this);
                     count++;
