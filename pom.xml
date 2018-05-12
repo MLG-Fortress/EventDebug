@@ -21,16 +21,24 @@
     
     <!-- Official (Craft-)Bukkit repository -->
     <repository>
+      <id>paper-repo</id>
+      <url>https://repo.destroystokyo.com/repository/maven-public/</url>
+    </repository>
+    <repository>
       <id>spigot-repo</id>
-      <url>http://repo.bukkit.org/content/groups/public</url>
+      <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+    </repository>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
     </repository>
   </repositories>
   
   <dependencies>
     <dependency>
-        <groupId>de.jaschastarke</groupId>
-        <artifactId>plib</artifactId>
-        <version>${plib.version}</version>
+      <groupId>com.github.MLG-Fortress</groupId>
+      <artifactId>plib</artifactId>
+      <version>81fa4ebf0e</version>
     </dependency>
     <dependency>
     <groupId>javassist</groupId>
@@ -43,10 +51,10 @@
       <version>0.9.9-RC1</version>
     </dependency>
     <dependency>
-        <!-- http://dl.bukkit.org/ -->
-        <groupId>org.bukkit</groupId>
-        <artifactId>bukkit</artifactId>
-        <version>1.12.2-R0.1-SNAPSHOT</version>
+      <groupId>com.destroystokyo.paper</groupId>
+      <artifactId>paper-api</artifactId>
+      <version>1.12.2-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
   
@@ -75,9 +83,6 @@
         <executions>
           <execution>
             <phase>compile</phase>
-            <goals>
-              <goal>pluginyaml</goal>
-            </goals>
             <configuration>
               <!-- plugin.yml -->
               <mainClass>de.jaschastarke.bukkit.eventdebug.EventDebug</mainClass>
