@@ -1,0 +1,6 @@
+name: EventDebug
+version: '1.0'
+main: de.jaschastarke.bukkit.eventdebug.EventDebug
+depend: []
+commands:
+  ed: {}
