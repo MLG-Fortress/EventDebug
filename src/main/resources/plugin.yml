@@ -3,4 +3,14 @@ version: '1.0'
 main: de.jaschastarke.bukkit.eventdebug.EventDebug
 depend: []
 commands:
-  ed: {}
+  ed:
+    permission: eventdebug.ok
+    permission-message: oof
+permissions:
+    eventdebug.*:
+        description: Grants ALL THE THINGS
+        children:
+            eventdebug.ed: true
+    eventdebug.ok:
+        description: Permission to /ed
+        default: op
