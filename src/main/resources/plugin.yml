@@ -1,7 +1,8 @@
 name: EventDebug
-version: '1.0'
+version: '1.1'
 main: de.jaschastarke.bukkit.eventdebug.EventDebug
 depend: []
+api-version: 1.13
 commands:
   ed:
     permission: eventdebug.ok
