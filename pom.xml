@@ -7,7 +7,7 @@
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <plib.version>1.5</plib.version>
+    <plib.version>1.7.0</plib.version>
   </properties>
   
   <repositories>
