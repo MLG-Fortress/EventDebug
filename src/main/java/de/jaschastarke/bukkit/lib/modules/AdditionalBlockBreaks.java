@@ -23,54 +23,23 @@ import de.jaschastarke.bukkit.lib.events.WaterDestroyedBlockEvent;
 public class AdditionalBlockBreaks extends SimpleModule<Core> implements Listener {
     private static final BlockFace[] CHECK_FACES = new BlockFace[]{BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST, BlockFace.UP, BlockFace.DOWN};
     private static final Material[] GROUNDED_MATERIALS = {
-        Material.CARPET,
-        Material.WOOD_PLATE,
-        Material.STONE_PLATE,
-        Material.GOLD_PLATE,
-        Material.IRON_PLATE,
-        Material.BED, // Its the item, not the placed block, but doesn't harm to know it also
-        Material.BED_BLOCK,
-        Material.WOOD_DOOR, // also
-        Material.WOODEN_DOOR,
         Material.IRON_DOOR, // also
-        Material.IRON_DOOR_BLOCK,
         Material.REDSTONE_WIRE,
-        Material.REDSTONE_COMPARATOR,
-        Material.REDSTONE_COMPARATOR_OFF,
-        Material.REDSTONE_COMPARATOR_ON,
-        Material.DIODE,
-        Material.DIODE_BLOCK_OFF,
-        Material.DIODE_BLOCK_ON,
-        Material.RAILS,
         Material.POWERED_RAIL,
         Material.DETECTOR_RAIL,
         Material.ACTIVATOR_RAIL,
     };
     private static final Material[] NOT_WATERPROOF = {
-        Material.CARPET,
-        Material.SKULL,
         Material.SNOW,
         Material.SNOW_BLOCK,
-        Material.SAPLING,
         Material.TORCH,
-        Material.REDSTONE_TORCH_OFF,
-        Material.REDSTONE_TORCH_ON,
-        Material.WEB,
-        Material.LONG_GRASS,
         Material.FLOWER_POT,
         Material.BROWN_MUSHROOM,
         Material.RED_MUSHROOM,
         Material.VINE,
         Material.STONE_BUTTON,
-        Material.WOOD_BUTTON,
         Material.TRIPWIRE_HOOK,
         Material.REDSTONE_WIRE,
-        Material.REDSTONE_COMPARATOR,
-        Material.REDSTONE_COMPARATOR_OFF,
-        Material.REDSTONE_COMPARATOR_ON,
-        Material.DIODE,
-        Material.DIODE_BLOCK_OFF,
-        Material.DIODE_BLOCK_ON,
         Material.LEVER,
     };
     private static AdditionalBlockBreaks registeredInstance = null;

@@ -22,12 +22,7 @@ public final class ItemUtils {
                     throw new MaterialDataNotRecognizedException();
             }
         }
-        Material e = null;
-        try {
-            e = Material.getMaterial(Integer.parseInt(material));
-        } catch (NumberFormatException ex) {
-            e = Material.matchMaterial(material);
-        }
+        Material e = Material.matchMaterial(m);
         if (e == null)
             throw new MaterialNotRecognizedException();
         if (d != -1)
