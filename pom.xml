@@ -37,11 +37,6 @@
   
   <dependencies>
     <dependency>
-      <groupId>de.jaschastarke</groupId>
-      <artifactId>plib</artifactId>
-      <version>${plib.version}</version>
-    </dependency>
-    <dependency>
     <groupId>javassist</groupId>
       <artifactId>javassist</artifactId>
       <version>3.12.1.GA</version>
@@ -78,29 +73,6 @@
           </configuration>
       </plugin>
       <plugin>
-        <groupId>de.jaschastarke</groupId>
-        <artifactId>plib</artifactId>
-        <version>${plib.version}</version>
-        <executions>
-          <execution>
-            <phase>compile</phase>
-            <configuration>
-              <!-- plugin.yml -->
-              <mainClass>de.jaschastarke.bukkit.eventdebug.EventDebug</mainClass>
-              <dependencies>
-                <!-- <param>LimitedCreative</param><!- - plib in future? -->
-              </dependencies>
-              <registeredPermissions>
-                <!-- <param>de.jaschastarke.test.Permissions:CONTAINER</param> -->
-              </registeredPermissions>
-              <registeredCommands>
-                <param>de.jaschastarke.bukkit.eventdebug.EventDebug$DummyCommand</param>
-              </registeredCommands>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
         <version>3.2.0</version>
@@ -114,14 +86,12 @@
               <createDependencyReducedPom>false</createDependencyReducedPom>
               <artifactSet>
                 <includes>
-                  <include>de.jaschastarke:plib</include>
                   <include>org.reflections:reflections</include>
                   <include>javassist:javassist</include>
                 </includes>
               </artifactSet>
               <filters>
                 <filter>
-                  <artifact>de.jaschastarke:plib</artifact>
                   <excludes>
                     <exclude>de/jaschastarke/maven/**</exclude>
                     <exclude>de/jaschastarke/bukkit/maven/**</exclude>
@@ -143,45 +113,5 @@
         </executions>
       </plugin>
   	</plugins>
-  	
-  	<pluginManagement>
-  		<plugins>
-  			<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-  			<plugin>
-  				<groupId>org.eclipse.m2e</groupId>
-  				<artifactId>lifecycle-mapping</artifactId>
-  				<version>1.0.0</version>
-  				<configuration>
-  					<lifecycleMappingMetadata>
-  						<pluginExecutions>
-  							<pluginExecution>
-  								<pluginExecutionFilter>
-  									<groupId>de.jaschastarke</groupId>
-  									<artifactId>plib</artifactId>
-  									<versionRange>
-  										[0.1-SNAPSHOT,)
-  									</versionRange>
-  									<goals>
-  										<goal>pluginyaml</goal>
-  									</goals>
-  								</pluginExecutionFilter>
-  								<action>
-  									<ignore></ignore>
-  								</action>
-  							</pluginExecution>
-  						</pluginExecutions>
-  					</lifecycleMappingMetadata>
-  				</configuration>
-  			</plugin>
-  		</plugins>
-  	</pluginManagement>
-    <extensions>
-      <!-- Enabling the use of SCP -->
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-         <artifactId>wagon-ssh</artifactId>
-         <version>3.3.2</version>
-      </extension>
-    </extensions>
   </build>
 </project>
