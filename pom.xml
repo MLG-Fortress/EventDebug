@@ -66,10 +66,6 @@
           <configuration>
               <source>1.6</source>
               <target>1.6</target>
-              <annotationProcessors>
-                <!-- Needed to fetch DocComments from Source -->
-                <annotationProcessor>de.jaschastarke.maven.AnnotationProcessor</annotationProcessor>
-              </annotationProcessors>
           </configuration>
       </plugin>
       <plugin>
