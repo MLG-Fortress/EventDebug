@@ -26,6 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -56,13 +57,17 @@ public class EventDebug extends Core {
         Set<Class<? extends Event>> events = reflections.getSubTypesOf(Event.class);
 
         EventExecutor executer = new SimpleEventExecuter();
-        DynamicListener listener = new DynamicListener(); 
+        DynamicListener listener = new DynamicListener();
+
+        Set<String> doNotRegisterTheseEvents = new HashSet<String>();
+        doNotRegisterTheseEvents.add("org.bukkit.event.player.PlayerPreLoginEvent");
+        doNotRegisterTheseEvents.add("org.bukkit.event.player.PlayerChatEvent");
 
         int count = 0;
         for (Class<? extends Event> event : events) {
             if (!Modifier.isAbstract(event.getModifiers())) {
                 getLogger().info("Found Event-Type: " + event.getName());
-                if (event.getName().equals("org.bukkit.event.player.PlayerChatEvent"))
+                if (doNotRegisterTheseEvents.contains(event.getName()))
                 {
                     getLogger().info("Ignoring this one.");
                     continue;
