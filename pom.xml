@@ -16,22 +16,16 @@
          Supports http only -->
     <repository>
       <id>de-jas-rep</id>
-      <url>http://repo.ja-s.de/mvn</url>
+      <url>https://repo.ja-s.de/mvn</url>
     </repository>
     
-    <!-- Official (Craft-)Bukkit repository -->
     <repository>
-      <id>paper-repo</id>
-      <url>https://repo.destroystokyo.com/repository/maven-public/</url>
+      <id>papermc</id>
+      <url>https://repo.papermc.io/repository/maven-public/</url>
     </repository>
     <repository>
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-    </repository>
-    <repository>
-      <id>bintray-robomwm-maven</id>
-      <name>bintray</name>
-      <url>https://dl.bintray.com/robomwm/maven</url>
     </repository>
   </repositories>
   
@@ -88,8 +82,8 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
           <configuration>
-              <source>1.6</source>
-              <target>1.6</target>
+              <source>1.8</source>
+              <target>1.8</target>
           </configuration>
       </plugin>
       <plugin>
